@@ -26,3 +26,31 @@ body {
     transform: translateY(0);
   }
 }
+
+body, .App {
+  background-color: #F7F4EB !important;
+  color: #4A3E3D !important;
+}
+
+.card, .secao-homenagem, section {
+  background-color: #FFFFFF !important;
+  border: 1px solid #EAE3D2 !important;
+  box-shadow: 0 4px 15px rgba(74, 62, 61, 0.05) !important;
+}
+
+h1, h2, .titulo-secao {
+  color: #3D2E2C !important;
+}
+
+header {
+  background-color: #FFFFFF !important;
+  border-bottom: 2px solid #EAE3D2 !important;
+}
+
+header nav ul li a {
+  color: #4A3E3D !important;
+}
+
+header nav ul li a:hover {
+  color: #8C6A5E !important;
+}
