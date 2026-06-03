@@ -1,0 +1,28 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background-color: #fcf8f7;
+  color: #2c2c30;
+}
+
+
+.cartao-secao {
+  animation: surgimentoSuave 1s ease-out;
+}
+
+@keyframes surgimentoSuave {
+  from {
+    opacity: 0;
+    transform: translateY(25px); /* Dá o efeito slide-up exigido */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,43 @@
+.rodape-site {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.texto-carinhoso {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #f8bbc6;
+  margin-bottom: 10px;
+}
+
+.creditos {
+  font-size: 0.9rem;
+  color: #adb5bd;
+  margin: 5px 0;
+}
+
+.direitos {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 15px;
+}
+
+.rodape-site {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
+.frase-carinhosa {
+  font-style: italic;
+  color: #e91e63;
+  margin-bottom: 8px;
+}
+.creditos {
+  font-size: 0.9rem;
+  color: #666;
+}
