@@ -1,69 +1,67 @@
-.cabecalho-site {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
-  border-bottom: 2px solid #e83e8c; /* Cor rosa/afetiva */
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+header {
+  width: 100% !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 2px 10px rgba(74, 62, 61, 0.08) !important;
+  padding: 15px 40px !important;
+  box-sizing: border-box !important;
 }
 
-.cabecalho-site h1 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: #e83e8c;
+.header-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
 }
 
-.menu-navegacao {
-  display: flex;
-  gap: 20px;
+header nav ul {
+  display: flex !important;
+  gap: 15px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.menu-navegacao a {
-  color: #6c757d;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+header nav ul li a {
+  display: inline-block !important;
+  text-decoration: none !important;
+  color: #4A3E3D !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 8px 16px !important;
+  background-color: #F7F4EB !important;
+  border: 1px solid #EAE3D2 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease-in-out !important;
 }
 
-.menu-navegacao a:hover {
-  color: #e83e8c;
+header nav ul li a:hover {
+  background-color: #8C6A5E !important;
+  color: #FFFFFF !important;
+  border-color: #8C6A5E !important;
+  transform: translateY(-1px) !important;
 }
 
 @media screen and (max-width: 768px) {
-  header, .header, div {
-    display: flex !important;
+  header {
+    padding: 15px 15px !important;
+  }
+  
+  .header-container {
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 12px !important;
-    padding: 15px 5px !important;
-    height: auto !important;
+    gap: 15px !important;
   }
 
-  h1, h2, span, .logo, .brand {
-    font-size: 18px !important;
-    text-align: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  nav ul, ul {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
+  header nav ul {
+    width: 100% !important;
     justify-content: center !important;
-    gap: 8px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
   }
-
-  nav ul li a, ul li a, li a {
+  
+  header nav ul li a {
     font-size: 13px !important;
-    padding: 5px 8px !important;
-    white-space: nowrap !important;
+    padding: 6px 12px !important;
   }
 }
