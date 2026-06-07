@@ -106,3 +106,16 @@
 h1 {
   margin-bottom: 15px !important;
 }
+
+iframe, video {
+  width: 100% !important;
+  height: 220px !important;
+  border-radius: 8px !important;
+  display: block !important;
+}
+
+@media screen and (min-width: 769px) {
+  iframe, video {
+    height: 350px !important;
+  }
+}
