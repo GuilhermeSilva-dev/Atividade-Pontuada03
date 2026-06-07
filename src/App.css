@@ -1,120 +1,144 @@
+/* ==========================================================================
+   ESTILOS GERAIS DO MODELO PADRÃO (VITE / FRAMEWORK)
+   ========================================================================== */
+
+/* Estiliza o botão de contador interativo */
 .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
+  color: var(--accent);         /* Usa a cor de destaque guardada na variável */
+  background: var(--accent-bg);   /* Usa a cor de fundo de destaque da variável */
+  border: 2px solid transparent;  /* Cria uma borda invisível para evitar que o botão mude de tamanho no hover */
+  transition: border-color 0.3s;  /* Transição suave de 0.3s para a cor da borda */
   margin-bottom: 24px;
 
+  /* Efeito quando o mouse passa por cima do botão */
   &:hover {
-    border-color: var(--accent-border);
+    border-color: var(--accent-border); /* Mostra a borda com a cor ativa */
   }
+
+  /* Garante acessibilidade quando o botão é selecionado via teclado (Tab) */
   &:focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    outline-offset: 2px;          /* Dá um pequeno respiro entre o botão e a linha de foco */
   }
 }
 
+/* Estiliza a área de destaque (Hero) que exibe logos empilhados */
 .hero {
-  position: relative;
+  position: relative;             /* Torna esta área o ponto de referência para os logos absolutos */
 
+  /* Aplica regras comuns aos três elementos visuais internos */
   .base,
   .framework,
   .vite {
-    inset-inline: 0;
-    margin: 0 auto;
+    inset-inline: 0;              /* Centraliza os elementos nas laterais esquerda e direita */
+    margin: 0 auto;               /* Força o alinhamento central */
   }
 
+  /* A imagem/logo que fica por baixo de tudo */
   .base {
     width: 170px;
     position: relative;
-    z-index: 0;
+    z-index: 0;                   /* Camada base */
   }
 
+  /* Os logos do framework e do Vite flutuam de forma absoluta */
   .framework,
   .vite {
     position: absolute;
   }
 
+  /* Logo do Framework (React, Vue, etc) posicionado com efeito de perspectiva 3D */
   .framework {
-    z-index: 1;
+    z-index: 1;                   /* Fica na frente da base */
     top: 34px;
     height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
+    /* Aplica inclinações nos eixos X, Y e Z para criar um efeito tridimensional flutuante */
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
   }
 
+  /* Logo do Vite posicionado logo abaixo com perspectiva 3D */
   .vite {
-    z-index: 0;
+    z-index: 0;                   /* Fica na camada de trás */
     top: 107px;
     height: 26px;
     width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
+    /* Inclinação 3D combinando com o logo de cima, mas em tamanho menor (scale 0.8) */
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
   }
 }
 
+/* Área central que alinha o conteúdo principal em coluna */
 #center {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
+  flex-direction: column;         /* Empilha os itens verticalmente */
+  gap: 25px;                      /* Espaço de 25px entre os elementos filho */
+  place-content: center;          /* Centraliza o conteúdo horizontal e verticalmente */
+  place-items: center;            /* Centraliza os itens internamente */
+  flex-grow: 1;                   /* Permite que o bloco cresça para preencher o espaço restante */
 
+  /* Ajuste para telas menores (Tablets) */
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
-    gap: 18px;
+    gap: 18px;                    /* Diminui levemente o espaço entre os itens */
   }
 }
 
+/* Bloco de "Próximos Passos" (links de documentação/redes no rodapé da página padrão) */
 #next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
+  display: flex;                  /* Coloca os blocos lado a lado no PC */
+  border-top: 1px solid var(--border); /* Linha divisória superior */
+  text-align: left;               /* Alinha os textos à esquerda */
 
+  /* Estiliza as colunas internas directas */
   & > div {
-    flex: 1 1 0;
+    flex: 1 1 0;                  /* Divide o espaço igualmente entre as colunas */
     padding: 32px;
+    
     @media (max-width: 1024px) {
-      padding: 24px 20px;
+      padding: 24px 20px;         /* Reduz o preenchimento em telas menores */
     }
   }
 
+  /* Estiliza os ícones informativos */
   .icon {
     margin-bottom: 16px;
     width: 22px;
     height: 22px;
   }
 
+  /* Quando a tela diminui, transforma as colunas em linhas empilhadas */
   @media (max-width: 1024px) {
     flex-direction: column;
-    text-align: center;
+    text-align: center;           /* Centraliza os textos no mobile */
   }
 }
 
+/* Ajusta as bordas da coluna de documentação */
 #docs {
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--border); /* Linha vertical separadora no PC */
 
   @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+    border-right: none;           /* Remove a linha lateral no celular */
+    border-bottom: 1px solid var(--border); /* Adiciona uma linha horizontal inferior */
   }
 }
 
+/* Estiliza a lista de links/redes sociais de próximos passos */
 #next-steps ul {
-  list-style: none;
+  list-style: none;               /* Remove as bolinhas da lista */
   padding: 0;
-  display: flex;
-  gap: 8px;
+  display: flex;                  /* Organiza os links em linha no PC */
+  gap: 8px;                       /* Espaço de 8px entre cada link */
   margin: 32px 0 0;
 
   .logo {
     height: 18px;
   }
 
+  /* Estiliza os botões de links */
   a {
     color: var(--text-h);
     font-size: 16px;
@@ -122,45 +146,51 @@
     background: var(--social-bg);
     display: flex;
     padding: 6px 12px;
-    align-items: center;
+    align-items: center;          /* Centraliza ícone e texto verticalmente */
     gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
+    text-decoration: none;        /* Remove sublinhado */
+    transition: box-shadow 0.3s;  /* Transição suave da sombra */
 
+    /* Efeito de sombra ao passar o mouse */
     &:hover {
       box-shadow: var(--shadow);
     }
+    
     .button-icon {
       height: 18px;
       width: 18px;
     }
   }
 
+  /* Ajusta os botões de links para telas menores */
   @media (max-width: 1024px) {
     margin-top: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;              /* Permite que os links quebrem para a próxima linha */
     justify-content: center;
 
     li {
-      flex: 1 1 calc(50% - 8px);
+      flex: 1 1 calc(50% - 8px);  /* Faz cada botão ocupar metade da tela (2 por linha) */
     }
 
     a {
-      width: 100%;
-      justify-content: center;
+      width: 100%;                /* O link preenche todo o espaço do li */
+      justify-content: center;    /* Centraliza o texto do botão */
       box-sizing: border-box;
     }
   }
 }
 
+/* Bloco espaçador decorativo no final do layout */
 #spacer {
   height: 88px;
   border-top: 1px solid var(--border);
+  
   @media (max-width: 1024px) {
-    height: 48px;
+    height: 48px;                 /* Encolhe o espaçador no celular */
   }
 }
 
+/* Pequenos marcadores decorativos em formato de setas/pontas nas bordas */
 .ticks {
   position: relative;
   width: 100%;
@@ -170,76 +200,93 @@
     content: '';
     position: absolute;
     top: -4.5px;
-    border: 5px solid transparent;
+    border: 5px solid transparent; /* Cria a base transparente para o triângulo em CSS */
   }
 
+  /* Setinha da esquerda */
   &::before {
     left: 0;
     border-left-color: var(--border);
   }
+  
+  /* Setinha da direita */
   &::after {
     right: 0;
     border-right-color: var(--border);
   }
 }
 
+
+/* ==========================================================================
+   REGRAS CUSTOMIZADAS: RESPONSIVIDADE DO SITE DE HOMENAGEM (MOBILE ATÉ 768px)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
+  
+  /* Aplica espaçamento seguro e evita quebras/barras de rolagem laterais no celular */
   .App, body {
     padding: 0 15px !important;
     overflow-x: hidden;
   }
 
+  /* Encolhe o padding interno do cabeçalho */
   header {
     padding: 15px 10px !important;
   }
 
+  /* Ajusta os links de navegação do menu para flutuar e centralizar no mobile */
   header nav ul {
     display: flex !important;
     flex-wrap: wrap !important;
-  justify-content: center !important;
+    justify-content: center !important;
     gap: 10px !important;
     padding: 0 !important;
   }
 
+  /* Ajusta o tamanho da fonte e clique dos links do menu no celular */
   header nav ul li a {
     font-size: 14px !important;
     padding: 6px 10px !important;
   }
 
+  /* Garante que o título principal (H1) fique menor e bem centralizado */
   h1 {
     font-size: 26px !important;
     text-align: center !important;
     line-height: 1.3 !important;
   }
 
+  /* Garante que os subtítulos fiquem proporcionais no mobile */
   h2, .titulo-secao {
     font-size: 22px !important;
     text-align: center !important;
   }
 
+  /* Configura TODOS os blocos e cartões para ocuparem 100% da tela do telefone */
   .card, .secao-homenagem, section {
-    padding: 20px 15px !important;
-    margin: 15px 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    padding: 20px 15px !important; /* Espaço interno confortável */
+    margin: 15px 0 !important;      /* Margem vertical para separar os cartões */
+    width: 100% !important;         /* Ocupa toda a largura disponível */
+    box-sizing: border-box !important; /* Evita que o padding "estoure" a largura do card */
   }
 
+  /* Formata os textos longos para ficarem justificados e bem alinhados no celular */
   p {
     font-size: 15px !important;
-    line-height: 1.6 !important;
-    text-align: justify !important;
+    line-height: 1.6 !important;   /* Melhora o espaçamento das linhas de leitura */
+    text-align: justify !important; /* Distribui o texto de margem a margem uniformemente */
   }
 
+  /* Força qualquer player de vídeo a manter o formato cinema (16:9) no mobile */
   iframe {
     width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important;
+    height: auto !important;        /* Altura calcula de acordo com a proporção */
+    aspect-ratio: 16 / 9 !important; /* Proporção ideal de reprodução */
   }
 
+  /* Reduz e centraliza os textos informativos do rodapé na tela do celular */
   footer {
     text-align: center !important;
     font-size: 13px !important;
     padding: 20px 10px !important;
   }
 }
-

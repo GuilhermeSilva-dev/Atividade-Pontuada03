@@ -1,69 +1,82 @@
+/* Estiliza a barra de cabeçalho principal */
 .cabecalho-site {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
-  border-bottom: 2px solid #e83e8c; /* Cor rosa/afetiva */
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  position: sticky;       /* Faz o menu ficar "grudado" no topo ao rolar a página */
+  top: 0;                 /* Garante que ele grude exatamente no ponto zero do topo */
+  background-color: #ffffff; /* Cor de fundo branca para o cabeçalho */
+  border-bottom: 2px solid #e83e8c; /* Linha rosa afetiva na parte inferior do menu */
+  padding: 15px 30px;     /* Espaçamento interno: 15px cima/baixo e 30px nas laterais */
+  display: flex;          /* Ativa o Flexbox para alinhar os elementos internamente */
+  justify-content: space-between; /* Empurra o título para a esquerda e o menu para a direita */
+  align-items: center;    /* Centraliza o título e os links verticalmente */
+  z-index: 1000;          /* Garante que o menu flutue por cima de qualquer outro elemento do site */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Sombra bem sutil embaixo do cabeçalho */
 }
 
+/* Estiliza o título "Homenagem Especial" dentro do cabeçalho */
 .cabecalho-site h1 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: #e83e8c;
+  margin: 0;              /* Remove as margens padrão do h1 */
+  font-size: 1.3rem;      /* Define o tamanho da fonte do título */
+  color: #e83e8c;         /* Aplica a cor rosa ao texto do título */
 }
 
+/* Organiza o grupo de links do menu */
 .menu-navegacao {
-  display: flex;
-  gap: 20px;
+  display: flex;          /* Usa Flexbox para colocar os links um ao lado do outro */
+  gap: 20px;              /* Cria um espaçamento de 20px entre cada link */
 }
 
+/* Estiliza o estado padrão de cada link do menu */
 .menu-navegacao a {
-  color: #6c757d;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  color: #6c757d;         /* Cor cinza neutro para os links */
+  text-decoration: none;  /* Remove o sublinhado padrão dos links */
+  font-weight: 500;       /* Deixa a fonte com peso médio (levemente negritada) */
+  transition: color 0.2s ease; /* Efeito suave de 0.2 segundos ao mudar a cor */
 }
 
+/* Altera o visual do link quando o mouse passa por cima (Hover) */
 .menu-navegacao a:hover {
-  color: #e83e8c;
+  color: #e83e8c;         /* O link acende com a cor rosa quando o usuário passa o mouse */
 }
 
+/* =============================================================
+   REGRAS DE RESPONSIVIDADE (PARA TELAS DE ATÉ 768px - MOBILE)
+   ============================================================= */
 @media screen and (max-width: 768px) {
+  
+  /* Modifica a estrutura do cabeçalho e elementos gerais para o celular */
   header, .header, div {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 12px !important;
-    padding: 15px 5px !important;
-    height: auto !important;
+    display: flex !important;           /* Garante que continuem usando Flexbox */
+    flex-direction: column !important;  /* Empilha o título e o menu um embaixo do outro */
+    align-items: center !important;     /* Centraliza tudo na tela do celular */
+    gap: 12px !important;               /* Dá um espaçamento de 12px entre os elementos empilhados */
+    padding: 15px 5px !important;       /* Diminui o espaçamento lateral para telas menores */
+    height: auto !important;            /* Permite que a altura se ajuste ao conteúdo */
   }
 
+  /* Ajusta o tamanho e alinhamento de títulos e textos no mobile */
   h1, h2, span, .logo, .brand {
-    font-size: 18px !important;
-    text-align: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    font-size: 18px !important;         /* Padroniza o tamanho da fonte no celular */
+    text-align: center !important;      /* Garante que o texto fique bem centralizado */
+    margin: 0 !important;               /* Zera todas as margens */
+    padding: 0 !important;              /* Zera todos os paddings */
   }
 
+  /* Organiza as listas de navegação no formato mobile */
   nav ul, ul {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px !important;
+    display: flex !important;           /* Usa flexbox para organizar os itens */
+    flex-direction: row !important;     /* Mantém os links da lista na horizontal */
+    flex-wrap: wrap !important;         /* Se faltar espaço, os links quebram para a linha de baixo */
+    justify-content: center !important; /* Centraliza a lista na tela */
+    gap: 8px !important;                /* Espaço de 8px entre os itens da lista */
     margin: 0 !important;
     padding: 0 !important;
-    list-style: none !important;
+    list-style: none !important;        /* Remove as bolinhas clássicas de listas HTML */
   }
 
+  /* Refina o tamanho e o espaçamento dos links de listas no mobile */
   nav ul li a, ul li a, li a {
-    font-size: 13px !important;
-    padding: 5px 8px !important;
-    white-space: nowrap !important;
+    font-size: 13px !important;         /* Diminui a letra dos links para caber no celular */
+    padding: 5px 8px !important;        /* Cria uma área de clique confortável */
+    white-space: nowrap !important;     /* Impede que uma palavra do link quebre sozinha */
   }
 }

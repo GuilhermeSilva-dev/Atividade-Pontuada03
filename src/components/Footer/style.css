@@ -1,43 +1,52 @@
+/* Estiliza o contêiner principal do rodapé */
 .rodape-site {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  padding: 30px 20px;
-  text-align: center;
-  margin-top: 60px;
+  background-color: #1a1a1a; /* Fundo cinza bem escuro, quase preto */
+  color: #ffffff; /* Letra branca para dar contraste com o fundo escuro */
+  padding: 30px 20px; /* Espaço interno: 30px em cima/embaixo, 20px nas laterais */
+  text-align: center; /* Centraliza todo o texto que estiver dentro do rodapé */
+  margin-top: 60px; /* Empurra o rodapé para baixo, afastando do conteúdo acima */
 }
 
+/* Estilo para um texto carinhoso (parece não estar sendo usado no seu HTML atual, que usa .frase-carinhosa) */
 .texto-carinhoso {
-  font-size: 1.1rem;
-  font-style: italic;
-  color: #f8bbc6;
-  margin-bottom: 10px;
+  font-size: 1.1rem; /* Tamanho da fonte um pouco maior que o padrão */
+  font-style: italic; /* Deixa a letra deitadinha (itálico) */
+  color: #f8bbc6; /* Cor rosa claro pastel */
+  margin-bottom: 10px; /* Dá um espacinho embaixo do texto */
 }
 
+/* Estilo para os créditos do desenvolvedor (versão 1) */
 .creditos {
-  font-size: 0.9rem;
-  color: #adb5bd;
-  margin: 5px 0;
+  font-size: 0.9rem; /* Tamanho da fonte um pouco menor */
+  color: #adb5bd; /* Cor cinza claro */
+  margin: 5px 0; /* Margem de 5px em cima e embaixo, 0 nas laterais */
 }
 
+/* Estilo para uma seção de direitos autorais (caso adicione no futuro) */
 .direitos {
-  font-size: 0.8rem;
-  color: #6c757d;
-  margin-top: 15px;
+  font-size: 0.8rem; /* Fonte bem pequenininha */
+  color: #6c757d; /* Cor cinza médio */
+  margin-top: 15px; /* Afasta 15px do elemento que estiver acima dele */
 }
 
+/* Sobrescreve as cores do rodapé para o tema claro */
 .rodape-site {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 1px solid #eee;
+  background-color: #ffffff; /* Muda o fundo escuro para branco */
+  text-align: center; /* Mantém o texto centralizado */
+  padding: 20px; /* Reduz o espaço interno para 20px em todos os lados */
+  margin-top: 40px; /* Reduz a distância do conteúdo de cima de 60px para 40px */
+  border-top: 1px solid #eee; /* Cria uma linha cinza bem fina na parte de cima do rodapé */
 }
+
+/* Estilo da frase principal do seu HTML ("A família é onde...") */
 .frase-carinhosa {
-  font-style: italic;
-  color: #e91e63;
-  margin-bottom: 8px;
+  font-style: italic; /* Deixa o texto deitado (itálico) para dar um ar poético */
+  color: #e91e63; /* Aplica a cor rosa vibrante no texto e no coração */
+  margin-bottom: 8px; /* Dá um respiro de 8px entre a frase e os créditos embaixo */
 }
+
+/* Sobrescreve os créditos para combinar com o fundo branco */
 .creditos {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.9rem; /* Mantém a fonte um pouco menor */
+  color: #666; /* Muda de cinza claro para um cinza mais escuro para dar leitura no fundo branco */
 }

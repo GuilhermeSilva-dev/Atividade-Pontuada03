@@ -1,78 +1,110 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESETS (AFETA O SITE INTEIRO)
+   ========================================================================== */
+
+/* Faz com que a rolagem da página seja suave ao clicar nos links do menu */
 html {
   scroll-behavior: smooth;
 }
 
+/* Reset global inicial para limpar margens e preenchimentos padrões dos navegadores */
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  background-color: #fcf8f7;
-  color: #2c2c30;
+  box-sizing: border-box; /* Garante que padding/borda não aumentem o tamanho total dos elementos */
+  font-family: 'Inter', sans-serif; /* Define a fonte padrão moderna do site */
+  background-color: #fcf8f7; /* Cor de fundo inicial (será substituída mais abaixo) */
+  color: #2c2c30; /* Cor da letra inicial */
 }
 
-
-.cartao-secao {
-  animation: surgimentoSuave 1s ease-out;
-}
-
-@keyframes surgimentoSuave {
-  from {
-    opacity: 0;
-    transform: translateY(25px); /* Dá o efeito slide-up exigido */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-body, .App {
-  background-color: #EFECE1 !important;
-  color: #4A3E3D !important;
-}
-
-.card, .secao-homenagem, section {
-  background-color: #FFFFFF !important;
-  border: 1px solid #EAE3D2 !important;
-  box-shadow: 0 4px 15px rgba(74, 62, 61, 0.05) !important;
-}
-
-h1, h2, .titulo-secao {
-  color: #3D2E2C !important;
-}
-
-header {
-  background-color: #FFFFFF !important;
-  border-bottom: 2px solid #EAE3D2 !important;
-}
-
-header nav ul li a {
-  color: #4A3E3D !important;
-}
-
-header nav ul li a:hover {
-  color: #8C6A5E !important;
-}
-
+/* Reset universal completo para garantir que nenhum elemento venha com espaçamento intruso */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* TRAVA DE SEGURANÇA: Impede qualquer barra de rolagem horizontal feia no celular */
 body, html, #root, .App {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Corta qualquer conteúdo que tente vazar para os lados */
 }
 
+
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA (SLIDE-UP / SURGIMENTO)
+   ========================================================================== */
+
+/* Aplica a animação de surgimento em todos os cartões de seção */
+.cartao-secao {
+  animation: surgimentoSuave 1s ease-out; /* Dura 1 segundo com desaceleração no final */
+}
+
+/* O "roteiro" da animação de transição */
+@keyframes surgimentoSuave {
+  from {
+    opacity: 0;                /* Começa totalmente invisível */
+    transform: translateY(25px); /* Começa 25 pixels abaixo da sua posição original */
+  }
+  to {
+    opacity: 1;                /* Termina totalmente visível */
+    transform: translateY(0);   /* Volta para a posição normal (efeito de subir) */
+  }
+}
+
+
+/* ==========================================================================
+   CORREÇÕES DE CORES DO TEMA AFETIVO (PALETA BEGE E MARROM)
+   ========================================================================== */
+
+/* Sobrescreve o fundo do site inteiro para o tom bege aconchegante */
+body, .App {
+  background-color: #EFECE1 !important;
+  color: #4A3E3D !important; /* Texto em marrom escuro */
+}
+
+/* Padroniza o fundo e contorno de caixas, cartões e seções */
+.card, .secao-homenagem, section {
+  background-color: #FFFFFF !important; /* Fundo branco puro */
+  border: 1px solid #EAE3D2 !important; /* Borda bege fina */
+  box-shadow: 0 4px 15px rgba(74, 62, 61, 0.05) !important; /* Sombra sutil marrom */
+}
+
+/* Força os títulos a usarem o tom marrom bem escuro */
+h1, h2, .titulo-secao {
+  color: #3D2E2C !important;
+}
+
+/* Alinha o cabeçalho com o fundo branco e borda bege inferior */
+header {
+  background-color: #FFFFFF !important;
+  border-bottom: 2px solid #EAE3D2 !important;
+}
+
+/* Define a cor padrão dos links do menu */
+header nav ul li a {
+  color: #4A3E3D !important;
+}
+
+/* Define a cor dos links do menu quando passa o mouse */
+header nav ul li a:hover {
+  color: #8C6A5E !important;
+}
+
+
+/* ==========================================================================
+   ESTRUTURA DE LAYOUT DAS PÁGINAS
+   ========================================================================== */
+
+/* Envelopamento central da Home */
 .conteudo-home {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
+/* Bloco de introdução (Título principal do topo) */
 .introducao {
   text-align: center;
   margin-bottom: 50px;
@@ -83,7 +115,7 @@ body, html, #root, .App {
   color: #333;
 }
 
-/* REQUISITO : Cards com box-shadow e hover dinâmico */
+/* Configuração dos Cartões de Conteúdo (Cards com efeito hover) */
 .cartao-secao {
   background: #ffffff;
   border-radius: 15px;
@@ -91,17 +123,18 @@ body, html, #root, .App {
   margin-bottom: 40px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  scroll-margin-top: 90px; /* Para a rolagem suave não cobrir o título */
+  scroll-margin-top: 90px; /* Margem de segurança para o menu fixo não cobrir o título ao rolar */
 }
 
+/* Efeito ao passar o mouse por cima do cartão */
 .cartao-secao:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px); /* Sobe de leve */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra expande */
 }
 
 .cartao-secao h3 {
   font-size: 1.8rem;
-  color: #e83e8c;
+  color: #e83e8c; /* Cor rosa para destacar títulos internos */
   margin-top: 0;
 }
 
@@ -111,7 +144,12 @@ body, html, #root, .App {
   color: #4a4a4a;
 }
 
-/* REQUISITO: Galeria de Memórias com molduras estilizadas */
+
+/* ==========================================================================
+   ESTILOS DA GALERIA DE FOTOS (MOLDURAS POLAROID)
+   ========================================================================== */
+
+/* Cria a malha de fotos automática */
 .galeria-fotos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -119,6 +157,7 @@ body, html, #root, .App {
   margin-top: 20px;
 }
 
+/* A moldura branca em volta da imagem */
 .moldura-foto {
   background: #ffffff;
   padding: 12px;
@@ -128,6 +167,7 @@ body, html, #root, .App {
   text-align: center;
 }
 
+/* Ajustes da foto em si dentro da moldura */
 .moldura-foto img {
   width: 100%;
   height: auto; 
@@ -136,6 +176,8 @@ body, html, #root, .App {
   background-color: #fafafa; 
   border-radius: 2px;
 }
+
+/* Legenda da foto */
 .moldura-foto span {
   font-size: 0.9rem;
   color: #777;
@@ -143,7 +185,12 @@ body, html, #root, .App {
   margin-top: 8px;
 }
 
-/* REQUISITO: Dedicatórias em Vídeo */
+
+/* ==========================================================================
+   BLOCOS DE COMBINAÇÃO E REGRAS DE HISTÓRICO DO VÍDEO
+   ========================================================================== */
+
+/* Container responsivo do vídeo (Proporção 16:9 dinâmica) */
 .container-video {
   position: relative;
   padding-bottom: 56.25%;
@@ -153,6 +200,7 @@ body, html, #root, .App {
   margin-top: 20px;
 }
 
+/* Força o iframe a cobrir o container dinâmico */
 .container-video iframe {
   position: absolute;
   top: 0;
@@ -162,6 +210,7 @@ body, html, #root, .App {
   border: none;
 }
 
+/* Estiliza caixas de títulos com cantos arredondados e borda bege */
 .hero-secao, .titulo-container, section header, div:has(> h1) {
   background-color: #FFFFFF !important;
   border-radius: 16px !important;
@@ -176,6 +225,15 @@ h1 {
   margin-bottom: 15px !important;
 }
 
+
+/* --------------------------------------------------------------------------
+   ⚠️ HISTÓRICO DE TENTATIVAS DO VÍDEO (REGRAS DE ALTURA FIXA)
+   Nota: As regras abaixo definem alturas fixas (220px/250px/450px) para os vídeos.
+   Se o layout do seu vídeo esticar ou espremer, lembre-se que essas linhas abaixo 
+   estão forçando tamanhos manuais por cima do container responsivo!
+   -------------------------------------------------------------------------- */
+
+/* Define alturas estáticas iniciais para os players */
 iframe, video {
   width: 100% !important;
   height: 220px !important;
@@ -183,13 +241,14 @@ iframe, video {
   display: block !important;
 }
 
+/* Aumenta a altura estática do vídeo no computador (Telas acima de 769px) */
 @media screen and (min-width: 769px) {
   iframe, video {
     height: 350px !important;
   }
 }
 
-
+/* Nova regra de segurança que força 250px de altura no mobile para cobrir variações de classes */
 iframe, 
 video, 
 .video-container iframe,
@@ -201,12 +260,10 @@ div[class*="video"] iframe {
   border: none !important;
 }
 
-
+/* Nova regra de segurança que força 450px de altura no computador */
 @media screen and (min-width: 769px) {
   iframe, video, .video-container iframe, div[class*="video"] iframe {
     height: 450px !important;
     min-height: 450px !important;
   }
 }
-
-
